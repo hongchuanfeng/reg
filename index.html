@@ -1,188 +1,81 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 
 <head>
+    <title> ai free json formatting tool - 在线JSON格式化工具</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="">
-    <meta name="renderer" content="webkit">
-
-    <title>
-        在线正则表达式测试工具-OPENAI
-    </title>
-	<meta name="keywords" content="正则表达式,正则表达式测试工具,在线正则表达式测试工具, 免费在线正则表达式测试工具-OPENAI" />
-    <meta name="description" content="正则表达式,正则表达式测试工具,在线正则表达式测试工具, 免费在线正则表达式测试工具-OPENAI" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+	<meta name="keywords" content="JSON,json ai,character ai json,character ai json file,download character ai json,sharepoint list json formatting,powershell convertto-json formatting,sharepoint json formatting examples,ai free json formatting tool,undress ai free tools,JSON工具,JSON格式化工具,在线json格式化工具-OPENAI2025,实用在线JSON格式化工具-OPENAI2025, 在线免费实用软件工具" />
+    <meta name="description" content="JSON,json ai,character ai json,character ai json file,download character ai json,sharepoint list json formatting,powershell convertto-json formatting,sharepoint json formatting examples,ai free json formatting tool,undress ai free tools,JSON工具,JSON格式化工具,在线json格式化工具-OPENAI2025,实用在线JSON格式化工具-OPENAI2025, 在线免费实用软件工具" />
+	
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.json-viewer.min.css" />
+    <script src="js/jquery.json-viewer.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSFD6Z1K1J"></script>
     <script>
-	var _hmt = _hmt || [];
-	(function() {
-	  var hm = document.createElement("script");
-	  hm.src = "https://hm.baidu.com/hm.js?348eaad3276f44eb6b40720741a1b2eb";
-	  var s = document.getElementsByTagName("script")[0]; 
-	  s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    <script src="lib/jquery-1.9.1.js"></script>
-    
-    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
-    <script src="lib/codemirror/codemirror.js"></script>
-    <!--<link rel="stylesheet" href="lib/codemirror/regex/js-regexcolors.css">
-    <script src="lib/codemirror/regex/parseregex.js"></script>-->
-    
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <script src="js/jch.Core.js"></script>
-    <script src="js/jch.jRegexTester.js"></script>
-    <script src="js/index.js"></script>
-    <style>
-        * {
-            font-family: Monaco, Andale Mono;
-        }
-        
-        .alert {
-            padding: 5px;
-            margin-bottom: 0px;
-            margin-left: 0;
-        }
-        
-        .btn-toolbar .btn-group, .btn-toolbar .input-group {
-            float: right;
-        }
-        
-        textarea {
-            word-break: break-all;
-        }
-        
-        .title {
-            display: inline-block;
-            margin: 0;
-            height: 30px;
-            line-height: 30px;
-        }
-        .copy-link{
-            float:left;
-            font-size:12px;
-            margin-right:10px;
-            margin-top: 2px;
-        }
-    </style>
+        gtag('config', 'G-QSFD6Z1K1J');
+    </script>
+    <script type="text/javascript">
+	
+
+        $(document).ready(function () {
+            $("#gsh").click(function () {
+                $("#output").val(JSON.stringify(JSON.parse($("#output").val()), null, 4));
+                $("#json").jsonViewer(JSON.parse($("#output").val()));
+            });
+            $("#clean").click(function () {
+                $("#output,.input-url").val("");
+                $("#json").html("");
+            });
+			$("#copy").click(function () {
+                var copyText = $('#output');
+
+				copyText.select();
+				document.execCommand("copy");
+                alert('Replicating Success')
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-info" role="toolbar">
-                        <h4 class="title">在线正则表达式测试工具</h4>
-                        <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
-						  <label class="btn btn-default active">
-                                    <a href="https://base64.openai2025.com" target="_blank" >在线base64转码</a>
-                                </label>
-						  <label class="btn btn-default active">
-                                    <a href="https://json.openai2025.com" target="_blank" >在线JSON工具</a>
-                                </label>
-                            <label class="btn btn-default active">
-                                    <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
-                                </label>
-                            <label class="btn btn-default">
-                                    <input type="radio" name="workMode" id="workModeReplace" value="1">替换模式
-                                </label>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-success navbar-btn" id="btnRun" style="display:none">Run!</button>
-                </div>
+    <div class="container" style="padding-top:20px;padding-bottom:20px;">
+        <h4 class="mb-3">Online JSON formatting tool
+        </h4>
+      
+
+        <div class="form-group mb-3">
+            <textarea class="form-control" rows="10" id="output" placeholder="Please enter a JSON string"></textarea>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-success btn-block" id="gsh">format
+                </button>
+            </div>
+            <div class="col">
+                <button class="btn btn-info btn-block copybtn" id="copy" data-clipboard-target="#output">copy
+                </button>
+            </div>
+            <div class="col">
+                <button class="btn btn-danger btn-block" id="clean">clear
+                </button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <!-- 📎 -->
-                        <label for="">正则表达式：</label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <a href='javascript:;' class="copy-link" id="copyLink" title="复制当前正则表达式与替换字符串到URL">#复制链接</a>
-                            <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
-                                </label>
-                            <label class="btn btn-default" title="选中则忽略大小写，参数i">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
-                                </label>
-                            <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
-                                </label>
-                        </div>
-                        <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="正则表达式" spellcheck="false"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">输入字符串：</label>
-                        <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">decodeURI</label>
-                            <label class="btn btn-default" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">Base64解码</label>
-                        </div>
-                        <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="输入字符串" spellcheck="false"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">替换内容：</label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
-                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含未匹配
-                            </label>
-                            <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
-                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">不包含未匹配
-                            </label>
-                        </div>
-                        <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="替换内容" spellcheck="false"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">输出结果：</label>
-                        
-                        <div class="btn-group btn-group-xs"  role="group">
-                            <label class="btn btn-default" title="将输出结果导入输入内容框" id="btnOutputToInput">⬆</label>
-                        </div>
-                        
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="window系统换行符,CRLF">
-                                <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
-                            </label>
-                            <label class="btn btn-default" title="Mac系统换行符,CR">
-                                <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
-                            </label>
-                            <label class="btn btn-default" title="Linux系统换行符,LF">
-                                <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
-                            </label>
-                        </div>
-                        <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="输出结果" spellcheck="false"></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <pre id="json"></pre>
     </div>
 
-
-
-
-
+    <script>
+        var clipboard = new ClipboardJS('.copybtn');
+    </script>
 </body>
 
 </html>
