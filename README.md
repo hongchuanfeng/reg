@@ -28,7 +28,7 @@ https://reg.openai2025.com/
 
 ### 效果如下：
 
-###英文版本
+### 英文版本
 
 ![image](https://github.com/user-attachments/assets/0c06bf7f-e196-473a-b74e-e9a37ab67e17)
 
