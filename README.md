@@ -1,5 +1,9 @@
 # 正则表达式在线测试工具简介
-是一款类似(https://reg.openai2025.com/)的正则表达式编写测试工具。
+是一款在线测试正则表达式工具，包括中文和英文版本
+
+官网地址：
+
+https://reg.openai2025.com/
 
 #### 用途：
 1、帮助开发人员编写正则表达式。
@@ -21,6 +25,16 @@
 
 #### 更新：
 支持通过参数传递界面默认值，参数: reg为正则表达式，input为输入字符串，replace为替换字符串。增加复制当前正则表达式与替换字符串到URL链接。
+
+### 效果如下：
+
+###英文版本
+
+![image](https://github.com/user-attachments/assets/0c06bf7f-e196-473a-b74e-e9a37ab67e17)
+
+### 中文版本
+
+![image](https://github.com/user-attachments/assets/b59529bf-5347-4980-a350-96974ca70eed)
 
 
 
