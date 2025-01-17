@@ -43,48 +43,46 @@
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-info" role="toolbar">
                         <h1 class="title">
-                            Regular expression testing
+                            正则测试工具
                         </h1>
-                        <a href="https://base64.openai2025.com" class="link-a" target="_blank" title="Online base64 transcoding">Base64 tool</a>
+                        <a href="https://base64.openai2025.com" class="link-a" target="_blank" title="在线base64转码">Base64转码 </a>
 
-                        <a href="https://json.openai2025.com" class="link-a" target="_blank" title="Online JSON Tool">
-                            JSON Tool
+                        <a href="https://json.openai2025.com" class="link-a" target="_blank" title="在线JSON工具">
+                            JSON工具
                         </a>
-
-                        <a title="mosaic Processing tool" class="link-a" href="https://mosaic.openai2025.com" target="_blank">
-                            mosaic tool
+                        <a title="图片马赛克工具" class="link-a" href="https://mosaic.openai2025.com" target="_blank">
+                            图片马赛克工具
                         </a>
-                        <a title="watermark Processing" class="link-a" href="https://watermark.openai2025.com" target="_blank">
-                            watermark Processing
+                        <a title="图片水印处理工具" class="link-a" href="https://watermark.openai2025.com" target="_blank">
+                            图片水印处理
                         </a>
-                        <a title="Picture picking color" class="link-a" href="https://getcolor.openai2025.com" target="_blank">
-                            Picture picking color
-                        </a>
-
-                        <a title="Image to Excel" class="link-a" href="https://img2excel.openai2025.com" target="_blank">
-                            Image to Excel
+                        <a title="图片拾取颜色" class="link-a" href="https://getcolor.openai2025.com" target="_blank">
+                            图片拾取颜色
                         </a>
 
-                        <a title="Image to icon" class="link-a" href="https://icon.openai2025.com" target="_blank">
-                            Image to icon
+                        <a title="图片转Excel" class="link-a" href="https://img2excel.openai2025.com" target="_blank">
+                            图片转Excel
                         </a>
 
+                        <a title="图片转icon" class="link-a" href="https://icon.openai2025.com" target="_blank">
+                            图片转icon
+                        </a>
 
 
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
 
                             <label class="btn btn-default active">
-                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>search mode
+                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
 
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="workMode" id="workModeReplace" value="1">replace mode
+                                <input type="radio" name="workMode" id="workModeReplace" value="1">替换模式
 
 
                             </label>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success navbar-btn" id="btnRun" style="display:none">Run!</button>
+                    <button type="button" class="btn btn-success navbar-btn" id="btnRun" style="display:none">运行!</button>
                 </div>
             </div>
         </div>
@@ -92,23 +90,23 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-
-                        <label for=''>regular expression :</label>
+   
+                        <label for=''>正则表达式 :</label>
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <a href='javascript:;' class="copy-link" id="copyLink" title="Copy the current regular expression and replace the string to the URL">
-                                #copy link
+                            <a href='javascript:;' class="copy-link" id="copyLink" title="复制当前正则表达式与替换字符串到URL">
+                                #复制链接
                             </a>
-                            <label class="btn btn-default active" title="Select to match all matching items, otherwise only match the first item, parameter g">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>global mode
+                            <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
+                                <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
                             </label>
-                            <label class="btn btn-default" title="If selected, ignore case, parameter i">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">ignore case
+                            <label class="btn btn-default" title="选中则忽略大小写，参数i">
+                                <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
                             </label>
-                            <label class="btn btn-default" title="Select to escape ^ and $as the beginning and end of the line, otherwise ^ and $as the beginning and end of all text">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">Multi line mode
+                            <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
+                                <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
                             </label>
                         </div>
-                        <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="regular expression" spellcheck="false"></textarea>
+                        <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="正则表达式" spellcheck="false"></textarea>
                     </div>
                 </div>
             </div>
@@ -117,12 +115,12 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>input string : </label>
+                        <label for=''>输入字符串 : </label>
                         <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="Call decodeURI Component to decode the input string" id="btnDecodeURI">decodeURI</label>
-                            <label class="btn btn-default" title="Decode the input string as base64" id="btnDecodeBase64">Base64 decoding</label>
+                            <label class="btn btn-default" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">decodeURI</label>
+                            <label class="btn btn-default" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">Base64解码</label>
                         </div>
-                        <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="input string" spellcheck="false"></textarea>
+                        <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="输入字符串" spellcheck="false"></textarea>
                     </div>
                 </div>
             </div>
@@ -131,16 +129,16 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">replace content : </label>
+                        <label for="">替换内容 : </label>
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="Default mode refers to replacing the matching results in the source string with new content">
-                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>Contains unmatched items
+                            <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
+                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含不匹配的项目
                             </label>
-                            <label class="btn btn-default" title="Extraction mode, used to replace the matching content in the source string with new content, commonly used for data extraction">
-                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">Excluding unmatched items
+                            <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
+                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">排除不匹配的项目
                             </label>
                         </div>
-                        <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="replace content" spellcheck="false"></textarea>
+                        <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="替换内容" spellcheck="false"></textarea>
                     </div>
                 </div>
             </div>
@@ -149,31 +147,31 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>Output result:</label>
+                        <label for=''>输出结果:</label>
 
                         <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="Import the output results into the input content box" id="btnOutputToInput">⬆</label>
+                            <label class="btn btn-default" title="将输出结果导入输入内容框" id="btnOutputToInput">⬆</label>
                         </div>
 
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="Window system line breaks, CRLF">
+                            <label class="btn btn-default active" title="window系统换行符,CRLF">
                                 <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
                             </label>
-                            <label class="btn btn-default" title="Mac system line breaks, CR">
+                            <label class="btn btn-default" title="Mac系统换行符,CR">
                                 <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
                             </label>
-                            <label class="btn btn-default" title="Linux system line breaks, LF">
+                            <label class="btn btn-default" title="Linux系统换行符,LF">
                                 <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
                             </label>
                         </div>
-                        <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="Output result" spellcheck="false"></textarea>
+                        <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="输出结果" spellcheck="false"></textarea>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <center>(<a href="./index-cn.html">Simplified Chinese</a> | <a href="./index.html">English</a>)</center>
+    <center>(<a href="./index-cn.html">简体中文</a> | <a href="./index.html">English</a>)</center>
 
 </body>
 
