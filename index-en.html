@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="RegexBuddy">
     <meta name="renderer" content="webkit">
     <title>
@@ -35,124 +35,247 @@
     <link href="css.css" rel="stylesheet" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
             crossorigin="anonymous"></script>
+    
+    <!-- Enhanced JavaScript functionality -->
+    <script>
+        // Hide loading animation after page loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(function() {
+                        loadingOverlay.style.display = 'none';
+                    }, 300);
+                }
+            }, 500);
+        });
+
+        // Help panel toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const helpToggle = document.getElementById('helpToggle');
+            const helpContent = document.getElementById('helpContent');
+            
+            if (helpToggle && helpContent) {
+                helpToggle.addEventListener('click', function() {
+                    if (helpContent.style.display === 'none') {
+                        helpContent.style.display = 'block';
+                        helpToggle.innerHTML = '<span class="help-icon">❌</span> Close Help';
+                    } else {
+                        helpContent.style.display = 'none';
+                        helpToggle.innerHTML = '<span class="help-icon">❓</span> Help';
+                    }
+                });
+            }
+
+            // Keyboard shortcuts support
+            document.addEventListener('keydown', function(e) {
+                // Ctrl + Enter to run test
+                if (e.ctrlKey && e.key === 'Enter') {
+                    e.preventDefault();
+                    const runBtn = document.getElementById('btnRun');
+                    if (runBtn && runBtn.style.display !== 'none') {
+                        runBtn.click();
+                    }
+                }
+                
+                // Ctrl + / to toggle help
+                if (e.ctrlKey && e.key === '/') {
+                    e.preventDefault();
+                    if (helpToggle) {
+                        helpToggle.click();
+                    }
+                }
+            });
+
+            // Enhanced copy link functionality
+            const copyLink = document.getElementById('copyLink');
+            if (copyLink) {
+                copyLink.addEventListener('click', function() {
+                    // Add actual copy functionality here
+                    this.innerHTML = '<span class="copy-icon">✅</span> Copied';
+                    setTimeout(() => {
+                        this.innerHTML = '<span class="copy-icon">🔗</span> Copy Link';
+                    }, 2000);
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
+    <!-- Page loading animation -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading Regular Expression Testing Tool...</p>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <br>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-info" role="toolbar">
-                        <h1 class="title">
-                            Regular expression testing
-                        </h1>
-			    
-                        <a href="https://www.openai2025.com" class="link-a" target="_blank">Chuandao software toolbox</a>
-
+            <div class="col-xs-12">
+                <div class="header-section">
+                    <div class="header-content">
+                        <div class="title-section">
+                            <h1 class="main-title">
+                                Regular Expression Testing
+                            </h1>
+                        </div>
+                        <a href="https://www.openai2025.com" class="tool-link" target="_blank">Chuandao Software Toolbox</a>
+                    </div>
+                    <div class="mode-selector">
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
-
                             <label class="btn btn-default active">
-                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>search mode
-
+                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>Search Mode
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="workMode" id="workModeReplace" value="1">replace mode
-
-
+                                <input type="radio" name="workMode" id="workModeReplace" value="1">Replace Mode
                             </label>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success navbar-btn" id="btnRun" style="display:none">Run!</button>
+                    <button type="button" class="btn btn-success run-btn" id="btnRun" style="display:none">
+                        <span class="btn-icon">▶</span>
+                        Run Test
+                        <span class="shortcut-hint">(Ctrl+Enter)</span>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-
-                        <label for=''>regular expression :</label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <a href='javascript:;' class="copy-link" id="copyLink" title="Copy the current regular expression and replace the string to the URL">
-                                #copy link
-                            </a>
-                            <label class="btn btn-default active" title="Select to match all matching items, otherwise only match the first item, parameter g">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>global mode
-                            </label>
-                            <label class="btn btn-default" title="If selected, ignore case, parameter i">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">ignore case
-                            </label>
-                            <label class="btn btn-default" title="Select to escape ^ and $as the beginning and end of the line, otherwise ^ and $as the beginning and end of all text">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">Multi line mode
-                            </label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">Regular Expression</label>
+                        <div class="section-controls">
+                            <button class="copy-link" id="copyLink" title="Copy the current regular expression and replace the string to the URL">
+                                <span class="copy-icon">🔗</span>
+                                Copy Link
+                            </button>
+                            <div class="option-buttons">
+                                <label class="btn btn-default active" title="Select to match all matching items, otherwise only match the first item, parameter g">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>Global Mode
+                                </label>
+                                <label class="btn btn-default" title="If selected, ignore case, parameter i">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">Ignore Case
+                                </label>
+                                <label class="btn btn-default" title="Select to escape ^ and $as the beginning and end of the line, otherwise ^ and $as the beginning and end of all text">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">Multiline Mode
+                                </label>
+                            </div>
                         </div>
-                        <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="regular expression" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control regex-input" name="" id="tbReg" cols="30" rows="1" placeholder="Enter regular expression" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>input string : </label>
-                        <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="Call decodeURI Component to decode the input string" id="btnDecodeURI">decodeURI</label>
-                            <label class="btn btn-default" title="Decode the input string as base64" id="btnDecodeBase64">Base64 decoding</label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">Input String</label>
+                        <div class="section-controls">
+                            <div class="decode-buttons">
+                                <button class="btn btn-default decode-btn" title="Call decodeURI Component to decode the input string" id="btnDecodeURI">
+                                    <span class="btn-icon">🔓</span>
+                                    DecodeURI
+                                </button>
+                                <button class="btn btn-default decode-btn" title="Decode the input string as base64" id="btnDecodeBase64">
+                                    <span class="btn-icon">🔐</span>
+                                    Base64 Decode
+                                </button>
+                            </div>
                         </div>
-                        <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="input string" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control text-input" name="" id="tbInput" cols="30" rows="6" placeholder="Enter string to test" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">replace content : </label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="Default mode refers to replacing the matching results in the source string with new content">
-                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>Contains unmatched items
-                            </label>
-                            <label class="btn btn-default" title="Extraction mode, used to replace the matching content in the source string with new content, commonly used for data extraction">
-                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">Excluding unmatched items
-                            </label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">Replace Content</label>
+                        <div class="section-controls">
+                            <div class="replace-mode-buttons">
+                                <label class="btn btn-default active" title="Default mode refers to replacing the matching results in the source string with new content">
+                                    <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>Include Unmatched Items
+                                </label>
+                                <label class="btn btn-default" title="Extraction mode, used to replace the matching content in the source string with new content, commonly used for data extraction">
+                                    <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">Exclude Unmatched Items
+                                </label>
+                            </div>
                         </div>
-                        <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="replace content" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control replace-input" name="" id="tbReplace" cols="30" rows="3" placeholder="Enter replace content" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>Output result:</label>
-
-                        <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="Import the output results into the input content box" id="btnOutputToInput">⬆</label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">Output Result</label>
+                        <div class="section-controls">
+                            <div class="output-controls">
+                                <button class="btn btn-default output-btn" title="Import the output results into the input content box" id="btnOutputToInput">
+                                    <span class="btn-icon">⬆</span>
+                                    Import to Input
+                                </button>
+                                <div class="newline-buttons">
+                                    <label class="btn btn-default active" title="Window system line breaks, CRLF">
+                                        <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
+                                    </label>
+                                    <label class="btn btn-default" title="Mac system line breaks, CR">
+                                        <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
+                                    </label>
+                                    <label class="btn btn-default" title="Linux system line breaks, LF">
+                                        <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="Window system line breaks, CRLF">
-                                <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
-                            </label>
-                            <label class="btn btn-default" title="Mac system line breaks, CR">
-                                <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
-                            </label>
-                            <label class="btn btn-default" title="Linux system line breaks, LF">
-                                <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
-                            </label>
-                        </div>
-                        <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="Output result" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control output-input" name="" id="tbOutput" cols="30" rows="6" placeholder="Output results will be displayed here" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
     </div>
 
-    <center>(<a href="./index.html">Simplified Chinese</a> | <a href="./index-en.html">English</a>)</center>
+    <!-- Help section -->
+    <div class="help-section">
+        <div class="help-toggle">
+            <button class="btn btn-info help-btn" id="helpToggle">
+                <span class="help-icon">❓</span>
+                Help
+            </button>
+        </div>
+        <div class="help-content" id="helpContent" style="display: none;">
+            <div class="help-card">
+                <h4>Keyboard Shortcuts</h4>
+                <ul>
+                    <li><kbd>Ctrl + Enter</kbd> - Run test</li>
+                    <li><kbd>Ctrl + /</kbd> - Toggle help</li>
+                    <li><kbd>Tab</kbd> - Switch between input fields</li>
+                </ul>
+            </div>
+            <div class="help-card">
+                <h4>Regular Expression Options</h4>
+                <ul>
+                    <li><strong>Global Mode (g)</strong> - Match all occurrences</li>
+                    <li><strong>Ignore Case (i)</strong> - Case insensitive matching</li>
+                    <li><strong>Multiline Mode (m)</strong> - ^ and $ match line start/end</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="language-switch">
+            <a href="./index.html">简体中文</a> | <a href="./index-en.html">English</a>
+        </div>
+    </div>
 
 </body>
 

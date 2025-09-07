@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="RegexBuddy">
     <meta name="renderer" content="webkit">
     <title>
@@ -36,125 +36,248 @@
     <link href="css.css" rel="stylesheet" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274710287377352"
             crossorigin="anonymous"></script>
+    
+    <!-- 增强的JavaScript功能 -->
+    <script>
+        // 页面加载完成后隐藏加载动画
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingOverlay = document.getElementById('loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(function() {
+                        loadingOverlay.style.display = 'none';
+                    }, 300);
+                }
+            }, 500);
+        });
+
+        // 帮助面板切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const helpToggle = document.getElementById('helpToggle');
+            const helpContent = document.getElementById('helpContent');
+            
+            if (helpToggle && helpContent) {
+                helpToggle.addEventListener('click', function() {
+                    if (helpContent.style.display === 'none') {
+                        helpContent.style.display = 'block';
+                        helpToggle.innerHTML = '<span class="help-icon">❌</span> 关闭帮助';
+                    } else {
+                        helpContent.style.display = 'none';
+                        helpToggle.innerHTML = '<span class="help-icon">❓</span> 使用帮助';
+                    }
+                });
+            }
+
+            // 监听输入变化（已移除状态指示器相关代码）
+
+            // 快捷键支持
+            document.addEventListener('keydown', function(e) {
+                // Ctrl + Enter 运行测试
+                if (e.ctrlKey && e.key === 'Enter') {
+                    e.preventDefault();
+                    const runBtn = document.getElementById('btnRun');
+                    if (runBtn && runBtn.style.display !== 'none') {
+                        runBtn.click();
+                    }
+                }
+                
+                // Ctrl + / 切换帮助
+                if (e.ctrlKey && e.key === '/') {
+                    e.preventDefault();
+                    if (helpToggle) {
+                        helpToggle.click();
+                    }
+                }
+            });
+
+            // 复制链接功能增强
+            const copyLink = document.getElementById('copyLink');
+            if (copyLink) {
+                copyLink.addEventListener('click', function() {
+                    // 这里可以添加实际的复制功能
+                    this.innerHTML = '<span class="copy-icon">✅</span> 已复制';
+                    setTimeout(() => {
+                        this.innerHTML = '<span class="copy-icon">🔗</span> 复制链接';
+                    }, 2000);
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
+    <!-- 页面加载动画 -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>正在加载正则表达式测试工具...</p>
+        </div>
+    </div>
+
     <div class="container-fluid">
-        <br>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-info" role="toolbar">
-                        <h1 class="title">
-                            正则测试工具
-                        </h1>
-			    
-                       <a href="https://www.openai2025.com" class="link-a" target="_blank">传道软件工具箱</a>
-
-
+            <div class="col-xs-12">
+                <div class="header-section">
+                    <div class="header-content">
+                        <div class="title-section">
+                            <h1 class="main-title">
+                                正则测试工具
+                            </h1>
+                        </div>
+                        <a href="https://www.openai2025.com" class="tool-link" target="_blank">传道软件工具箱</a>
+                    </div>
+                    <div class="mode-selector">
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
-
                             <label class="btn btn-default active">
                                 <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
-
                             </label>
                             <label class="btn btn-default">
                                 <input type="radio" name="workMode" id="workModeReplace" value="1">替换模式
-
-
                             </label>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success navbar-btn" id="btnRun" style="display:none">运行!</button>
+                    <button type="button" class="btn btn-success run-btn" id="btnRun" style="display:none">
+                        <span class="btn-icon">▶</span>
+                        运行测试
+                        <span class="shortcut-hint">(Ctrl+Enter)</span>
+                    </button>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-   
-                        <label for=''>正则表达式 :</label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <a href='javascript:;' class="copy-link" id="copyLink" title="复制当前正则表达式与替换字符串到URL">
-                                #复制链接
-                            </a>
-                            <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
-                            </label>
-                            <label class="btn btn-default" title="选中则忽略大小写，参数i">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
-                            </label>
-                            <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
-                                <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
-                            </label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">正则表达式</label>
+                        <div class="section-controls">
+                            <button class="copy-link" id="copyLink" title="复制当前正则表达式与替换字符串到URL">
+                                <span class="copy-icon">🔗</span>
+                                复制链接
+                            </button>
+                            <div class="option-buttons">
+                                <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
+                                </label>
+                                <label class="btn btn-default" title="选中则忽略大小写，参数i">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
+                                </label>
+                                <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
+                                </label>
+                            </div>
                         </div>
-                        <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="正则表达式" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control regex-input" name="" id="tbReg" cols="30" rows="1" placeholder="请输入正则表达式" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>输入字符串 : </label>
-                        <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">decodeURI</label>
-                            <label class="btn btn-default" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">Base64解码</label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">输入字符串</label>
+                        <div class="section-controls">
+                            <div class="decode-buttons">
+                                <button class="btn btn-default decode-btn" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">
+                                    <span class="btn-icon">🔓</span>
+                                    decodeURI
+                                </button>
+                                <button class="btn btn-default decode-btn" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">
+                                    <span class="btn-icon">🔐</span>
+                                    Base64解码
+                                </button>
+                            </div>
                         </div>
-                        <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="输入字符串" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control text-input" name="" id="tbInput" cols="30" rows="6" placeholder="请输入要测试的字符串" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">替换内容 : </label>
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
-                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含不匹配的项目
-                            </label>
-                            <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
-                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">排除不匹配的项目
-                            </label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">替换内容</label>
+                        <div class="section-controls">
+                            <div class="replace-mode-buttons">
+                                <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
+                                    <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含不匹配的项目
+                                </label>
+                                <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
+                                    <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">排除不匹配的项目
+                                </label>
+                            </div>
                         </div>
-                        <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="替换内容" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control replace-input" name="" id="tbReplace" cols="30" rows="3" placeholder="请输入替换内容" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for=''>输出结果:</label>
-
-                        <div class="btn-group btn-group-xs" role="group">
-                            <label class="btn btn-default" title="将输出结果导入输入内容框" id="btnOutputToInput">⬆</label>
+            <div class="col-xs-12">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label class="section-label">输出结果</label>
+                        <div class="section-controls">
+                            <div class="output-controls">
+                                <button class="btn btn-default output-btn" title="将输出结果导入输入内容框" id="btnOutputToInput">
+                                    <span class="btn-icon">⬆</span>
+                                    导入输入
+                                </button>
+                                <div class="newline-buttons">
+                                    <label class="btn btn-default active" title="window系统换行符,CRLF">
+                                        <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
+                                    </label>
+                                    <label class="btn btn-default" title="Mac系统换行符,CR">
+                                        <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
+                                    </label>
+                                    <label class="btn btn-default" title="Linux系统换行符,LF">
+                                        <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
-                            <label class="btn btn-default active" title="window系统换行符,CRLF">
-                                <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
-                            </label>
-                            <label class="btn btn-default" title="Mac系统换行符,CR">
-                                <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
-                            </label>
-                            <label class="btn btn-default" title="Linux系统换行符,LF">
-                                <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
-                            </label>
-                        </div>
-                        <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="输出结果" spellcheck="false"></textarea>
                     </div>
+                    <textarea class="form-control output-input" name="" id="tbOutput" cols="30" rows="6" placeholder="输出结果将显示在这里" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
     </div>
 
-    <center>(<a href="./index.html">简体中文</a> | <a href="./index-en.html">English</a>)</center>
+    <!-- 帮助提示区域 -->
+    <div class="help-section">
+        <div class="help-toggle">
+            <button class="btn btn-info help-btn" id="helpToggle">
+                <span class="help-icon">❓</span>
+                使用帮助
+            </button>
+        </div>
+        <div class="help-content" id="helpContent" style="display: none;">
+            <div class="help-card">
+                <h4>快捷键</h4>
+                <ul>
+                    <li><kbd>Ctrl + Enter</kbd> - 运行测试</li>
+                    <li><kbd>Ctrl + /</kbd> - 切换帮助</li>
+                    <li><kbd>Tab</kbd> - 在输入框间切换</li>
+                </ul>
+            </div>
+            <div class="help-card">
+                <h4>正则表达式选项</h4>
+                <ul>
+                    <li><strong>全局模式 (g)</strong> - 匹配所有符合项</li>
+                    <li><strong>忽略大小写 (i)</strong> - 不区分大小写</li>
+                    <li><strong>多行模式 (m)</strong> - ^和$匹配行首行尾</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="language-switch">
+            <a href="./index.html">简体中文</a> | <a href="./index-en.html">English</a>
+        </div>
+    </div>
 
 </body>
 
