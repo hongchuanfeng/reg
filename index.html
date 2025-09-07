@@ -39,18 +39,6 @@
     
     <!-- 增强的JavaScript功能 -->
     <script>
-        // 页面加载完成后隐藏加载动画
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loadingOverlay = document.getElementById('loading-overlay');
-                if (loadingOverlay) {
-                    loadingOverlay.style.opacity = '0';
-                    setTimeout(function() {
-                        loadingOverlay.style.display = 'none';
-                    }, 300);
-                }
-            }, 500);
-        });
 
         // 帮助面板切换
         document.addEventListener('DOMContentLoaded', function() {
@@ -107,13 +95,6 @@
 </head>
 
 <body>
-    <!-- 页面加载动画 -->
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>正在加载正则表达式测试工具...</p>
-        </div>
-    </div>
 
     <div class="container-fluid">
         <div class="row">

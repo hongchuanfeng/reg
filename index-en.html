@@ -38,18 +38,6 @@
     
     <!-- Enhanced JavaScript functionality -->
     <script>
-        // Hide loading animation after page loads
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loadingOverlay = document.getElementById('loading-overlay');
-                if (loadingOverlay) {
-                    loadingOverlay.style.opacity = '0';
-                    setTimeout(function() {
-                        loadingOverlay.style.display = 'none';
-                    }, 300);
-                }
-            }, 500);
-        });
 
         // Help panel toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -104,13 +92,6 @@
 </head>
 
 <body>
-    <!-- Page loading animation -->
-    <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading Regular Expression Testing Tool...</p>
-        </div>
-    </div>
 
     <div class="container-fluid">
         <br>
