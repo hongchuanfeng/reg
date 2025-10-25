@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="RegexBuddy">
     <meta name="renderer" content="webkit">
-    <title>免费在线正则表达式测试工具 - 正则表达式生成器 | 传道AI</title>
-	<meta name="keywords" content="RegexBuddy,JGsoft RegexBuddy ,regular expression generator,regular expression builder,ai regular expression generator,openai chat,正则表达式,正则表达式测试工具,在线正则表达式测试工具, 免费在线正则表达式测试工具-OPENAI" />
-    <meta name="description" content="RegexBuddy,JGsoft RegexBuddy ,regular expression generator,regular expression builder,ai regular expression generator,openai chat,正则表达式,正则表达式测试工具,在线正则表达式测试工具, 免费在线正则表达式测试工具-OPENAI" />
-	<link rel="canonical" href="https://reg.openai2025.com/index.html">
+    <title>Free Online Regular Expression Testing Tool - Regex Generator | ChuanDao AI</title>
+	<meta name="keywords" content="RegexBuddy,JGsoft RegexBuddy ,regular expression generator,regular expression builder,ai regular expression generator,openai chat,regex,regex tester,online regex tester,free online regex tester-OPENAI" />
+    <meta name="description" content="RegexBuddy,JGsoft RegexBuddy ,regular expression generator,regular expression builder,ai regular expression generator,openai chat,regex,regex tester,online regex tester,free online regex tester-OPENAI" />
+	<link rel="canonical" href="https://reg.openai2025.com/en/index.html">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWMGEQS9C0"></script>
 <script>
@@ -408,16 +408,12 @@
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
-            text-align: center;
-            width: 100%;
         }
         
         .subtitle {
             font-size: 1.1rem;
             margin-bottom: 1rem;
             font-weight: 400;
-            text-align: center;
-            width: 100%;
         }
         
         @media (max-width: 768px) {
@@ -817,9 +813,9 @@
             if (copyLink) {
                 copyLink.addEventListener('click', function() {
                     // 这里可以添加实际的复制功能
-                    this.innerHTML = '<span class="copy-icon">✅</span> 已复制';
+                    this.innerHTML = '<span class="copy-icon">✅</span> Copied';
                     setTimeout(() => {
-                        this.innerHTML = '<span class="copy-icon">🔗</span> 复制链接';
+                        this.innerHTML = '<span class="copy-icon">🔗</span> Copy Link';
                     }, 2000);
                 });
             }
@@ -852,7 +848,7 @@
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <span class="brand-icon">🔧</span>
-                    正则测试工具
+                    Regex Tester
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -864,31 +860,31 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="index.html">
                                 <span class="nav-icon">🏠</span>
-                                首页
+                                Home
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">
                                 <span class="nav-icon">ℹ️</span>
-                                关于我们
+                                About Us
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">
                                 <span class="nav-icon">📞</span>
-                                联系我们
+                                Contact Us
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="privacy.html">
                                 <span class="nav-icon">🔒</span>
-                                隐私政策
+                                Privacy Policy
                             </a>
                         </li>
                         <li class="nav-item language-switch-nav">
-                            <a class="nav-link" href="en/index.html">
+                            <a class="nav-link" href="../index.html">
                                 <span class="nav-icon">🌐</span>
-                                English
+                                简体中文
                             </a>
                         </li>
                     </ul>
@@ -905,25 +901,24 @@
                     <div class="header-content">
                         <div class="title-section">
                             <h1 class="main-title">
-                                免费在线正则表达式测试工具
+                                Free Online Regular Expression Testing Tool
                             </h1>
-                            <p class="subtitle">快速、准确、易用的正则表达式测试平台</p>
+                            <p class="subtitle">Fast, accurate, and easy-to-use regular expression testing platform</p>
                         </div>
-                       
                     </div>
                     <div class="mode-selector">
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
                             <label class="btn btn-default active">
-                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
+                                <input type="radio" name="workMode" id="workModeMatch" value="0" checked>Match Mode
                             </label>
                             <label class="btn btn-default">
-                                <input type="radio" name="workMode" id="workModeReplace" value="1">替换模式
+                                <input type="radio" name="workMode" id="workModeReplace" value="1">Replace Mode
                             </label>
                         </div>
                     </div>
                     <button type="button" class="btn btn-success run-btn" id="btnRun" style="display:none">
                         <span class="btn-icon">▶</span>
-                        运行测试
+                        Run Test
                         <span class="shortcut-hint">(Ctrl+Enter)</span>
                     </button>
                 </div>
@@ -933,26 +928,26 @@
             <div class="col-xs-12">
                 <div class="input-section">
                     <div class="section-header">
-                        <label class="section-label">正则表达式</label>
+                        <label class="section-label">Regular Expression</label>
                         <div class="section-controls">
-                            <button class="copy-link" id="copyLink" title="复制当前正则表达式与替换字符串到URL">
+                            <button class="copy-link" id="copyLink" title="Copy current regular expression and replacement string to URL">
                                 <span class="copy-icon">🔗</span>
-                                复制链接
+                                Copy Link
                             </button>
                             <div class="option-buttons">
-                                <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
+                                <label class="btn btn-default active" title="Check to match all occurrences, otherwise only match the first occurrence, parameter g">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>Global Mode
                                 </label>
-                                <label class="btn btn-default" title="选中则忽略大小写，参数i">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
+                                <label class="btn btn-default" title="Check to ignore case, parameter i">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">Ignore Case
                                 </label>
-                                <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
+                                <label class="btn btn-default" title="Check to escape ^ and $ as line start and end, otherwise ^ and $ are start and end of all text">
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">Multiline Mode
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <textarea class="form-control regex-input" name="" id="tbReg" cols="30" rows="1" placeholder="请输入正则表达式" spellcheck="false"></textarea>
+                    <textarea class="form-control regex-input" name="" id="tbReg" cols="30" rows="1" placeholder="Please enter regular expression" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
@@ -960,21 +955,21 @@
             <div class="col-xs-12">
                 <div class="input-section">
                     <div class="section-header">
-                        <label class="section-label">输入字符串</label>
+                        <label class="section-label">Input String</label>
                         <div class="section-controls">
                             <div class="decode-buttons">
-                                <button class="btn btn-default decode-btn" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">
+                                <button class="btn btn-default decode-btn" title="Decode input string using decodeURIComponent" id="btnDecodeURI">
                                     <span class="btn-icon">🔓</span>
                                     decodeURI
                                 </button>
-                                <button class="btn btn-default decode-btn" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">
+                                <button class="btn btn-default decode-btn" title="Decode input string as base64" id="btnDecodeBase64">
                                     <span class="btn-icon">🔐</span>
-                                    Base64解码
+                                    Base64 Decode
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <textarea class="form-control text-input" name="" id="tbInput" cols="30" rows="6" placeholder="请输入要测试的字符串" spellcheck="false"></textarea>
+                    <textarea class="form-control text-input" name="" id="tbInput" cols="30" rows="6" placeholder="Please enter the string to test" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
@@ -982,19 +977,19 @@
             <div class="col-xs-12">
                 <div class="input-section">
                     <div class="section-header">
-                        <label class="section-label">替换内容</label>
+                        <label class="section-label">Replacement Content</label>
                         <div class="section-controls">
                             <div class="replace-mode-buttons">
-                                <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
-                                    <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含不匹配的项目
+                                <label class="btn btn-default active" title="Default mode, replace matched results in source string with new content">
+                                    <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>Include Non-matching Items
                                 </label>
-                                <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
-                                    <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">排除不匹配的项目
+                                <label class="btn btn-default" title="Extract mode, used to replace matched content in source string with new content, commonly used for data extraction">
+                                    <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">Exclude Non-matching Items
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <textarea class="form-control replace-input" name="" id="tbReplace" cols="30" rows="3" placeholder="请输入替换内容" spellcheck="false"></textarea>
+                    <textarea class="form-control replace-input" name="" id="tbReplace" cols="30" rows="3" placeholder="Please enter replacement content" spellcheck="false"></textarea>
                 </div>
             </div>
         </div>
@@ -1002,28 +997,28 @@
             <div class="col-xs-12">
                 <div class="input-section">
                     <div class="section-header">
-                        <label class="section-label">输出结果</label>
+                        <label class="section-label">Output Result</label>
                         <div class="section-controls">
                             <div class="output-controls">
-                                <button class="btn btn-default output-btn" title="将输出结果导入输入内容框" id="btnOutputToInput">
+                                <button class="btn btn-default output-btn" title="Import output result to input content box" id="btnOutputToInput">
                                     <span class="btn-icon">⬆</span>
-                                    导入输入
+                                    Import Input
                                 </button>
                                 <div class="newline-buttons">
-                                    <label class="btn btn-default active" title="window系统换行符,CRLF">
+                                    <label class="btn btn-default active" title="Windows system line break, CRLF">
                                         <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
                                     </label>
-                                    <label class="btn btn-default" title="Mac系统换行符,CR">
+                                    <label class="btn btn-default" title="Mac system line break, CR">
                                         <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
                                     </label>
-                                    <label class="btn btn-default" title="Linux系统换行符,LF">
+                                    <label class="btn btn-default" title="Linux system line break, LF">
                                         <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <textarea class="form-control output-input" name="" id="tbOutput" cols="30" rows="6" placeholder="输出结果将显示在这里" spellcheck="false"></textarea>
+                    <textarea class="form-control output-input" name="" id="tbOutput" cols="30" rows="6" placeholder="Output results will be displayed here" spellcheck="false"></textarea>
                 </div>
                 </div>
             </div>
@@ -1034,119 +1029,118 @@
     <div class="help-section">
         <div class="help-content" id="helpContent">
             <div class="help-card">
-                <h4><span class="help-icon">⌨️</span> 快捷键</h4>
+                <h4><span class="help-icon">⌨️</span> Keyboard Shortcuts</h4>
                 <ul>
-                    <li><kbd>Ctrl + Enter</kbd> - 运行测试</li>
-                    <li><kbd>Ctrl + /</kbd> - 切换帮助</li>
-                    <li><kbd>Tab</kbd> - 在输入框间切换</li>
+                    <li><kbd>Ctrl + Enter</kbd> - Run Test</li>
+                    <li><kbd>Ctrl + /</kbd> - Toggle Help</li>
+                    <li><kbd>Tab</kbd> - Switch between input boxes</li>
                 </ul>
             </div>
             <div class="help-card">
-                <h4><span class="help-icon">⚙️</span> 正则表达式选项</h4>
+                <h4><span class="help-icon">⚙️</span> Regular Expression Options</h4>
                 <ul>
-                    <li><strong>全局模式 (g)</strong> - 匹配所有符合项</li>
-                    <li><strong>忽略大小写 (i)</strong> - 不区分大小写</li>
-                    <li><strong>多行模式 (m)</strong> - ^和$匹配行首行尾</li>
+                    <li><strong>Global Mode (g)</strong> - Match all occurrences</li>
+                    <li><strong>Ignore Case (i)</strong> - Case insensitive</li>
+                    <li><strong>Multiline Mode (m)</strong> - ^ and $ match line start and end</li>
                 </ul>
             </div>
             <div class="help-card">
-                <h4><span class="help-icon">📝</span> 常用正则表达式</h4>
+                <h4><span class="help-icon">📝</span> Common Regular Expressions</h4>
                 <div class="regex-examples">
                     <div class="example-item">
-                        <strong>邮箱地址：</strong>
+                        <strong>Email Address:</strong>
                         <code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</code>
-                        <p class="example-desc">匹配标准的邮箱格式</p>
+                        <p class="example-desc">Matches standard email format</p>
                     </div>
                     <div class="example-item">
-                        <strong>手机号码：</strong>
+                        <strong>Phone Number:</strong>
                         <code>^1[3-9]\d{9}$</code>
-                        <p class="example-desc">匹配中国大陆11位手机号</p>
+                        <p class="example-desc">Matches Chinese mainland 11-digit phone number</p>
                     </div>
                     <div class="example-item">
-                        <strong>身份证号：</strong>
+                        <strong>ID Card Number:</strong>
                         <code>^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$</code>
-                        <p class="example-desc">匹配18位身份证号码</p>
+                        <p class="example-desc">Matches 18-digit ID card number</p>
                     </div>
                     <div class="example-item">
-                        <strong>IP地址：</strong>
+                        <strong>IP Address:</strong>
                         <code>^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$</code>
-                        <p class="example-desc">匹配IPv4地址格式</p>
+                        <p class="example-desc">Matches IPv4 address format</p>
                     </div>
                     <div class="example-item">
-                        <strong>URL链接：</strong>
+                        <strong>URL Link:</strong>
                         <code>^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$</code>
-                        <p class="example-desc">匹配HTTP/HTTPS链接</p>
+                        <p class="example-desc">Matches HTTP/HTTPS links</p>
                     </div>
                     <div class="example-item">
-                        <strong>中文字符：</strong>
+                        <strong>Chinese Characters:</strong>
                         <code>[\u4e00-\u9fa5]</code>
-                        <p class="example-desc">匹配单个中文字符</p>
+                        <p class="example-desc">Matches single Chinese character</p>
                     </div>
                     <div class="example-item">
-                        <strong>数字（整数）：</strong>
+                        <strong>Integer Numbers:</strong>
                         <code>^-?\d+$</code>
-                        <p class="example-desc">匹配正负整数</p>
+                        <p class="example-desc">Matches positive and negative integers</p>
                     </div>
                     <div class="example-item">
-                        <strong>小数：</strong>
+                        <strong>Decimal Numbers:</strong>
                         <code>^-?\d+\.\d+$</code>
-                        <p class="example-desc">匹配正负小数</p>
+                        <p class="example-desc">Matches positive and negative decimals</p>
                     </div>
                 </div>
             </div>
             <div class="help-card">
-                <h4><span class="help-icon">🔍</span> 正则表达式语法</h4>
+                <h4><span class="help-icon">🔍</span> Regular Expression Syntax</h4>
                 <div class="syntax-examples">
                     <div class="syntax-item">
-                        <strong>字符类：</strong>
+                        <strong>Character Classes:</strong>
                         <ul>
-                            <li><code>[abc]</code> - 匹配a、b或c</li>
-                            <li><code>[a-z]</code> - 匹配任意小写字母</li>
-                            <li><code>[^abc]</code> - 匹配除a、b、c外的任意字符</li>
+                            <li><code>[abc]</code> - Matches a, b, or c</li>
+                            <li><code>[a-z]</code> - Matches any lowercase letter</li>
+                            <li><code>[^abc]</code> - Matches any character except a, b, c</li>
                         </ul>
                     </div>
                     <div class="syntax-item">
-                        <strong>量词：</strong>
+                        <strong>Quantifiers:</strong>
                         <ul>
-                            <li><code>*</code> - 0次或多次</li>
-                            <li><code>+</code> - 1次或多次</li>
-                            <li><code>?</code> - 0次或1次</li>
-                            <li><code>{n}</code> - 恰好n次</li>
-                            <li><code>{n,}</code> - n次或更多</li>
-                            <li><code>{n,m}</code> - n到m次</li>
+                            <li><code>*</code> - Zero or more times</li>
+                            <li><code>+</code> - One or more times</li>
+                            <li><code>?</code> - Zero or one time</li>
+                            <li><code>{n}</code> - Exactly n times</li>
+                            <li><code>{n,}</code> - n or more times</li>
+                            <li><code>{n,m}</code> - Between n and m times</li>
                         </ul>
                     </div>
                     <div class="syntax-item">
-                        <strong>特殊字符：</strong>
+                        <strong>Special Characters:</strong>
                         <ul>
-                            <li><code>.</code> - 匹配任意字符（除换行符）</li>
-                            <li><code>^</code> - 匹配字符串开始</li>
-                            <li><code>$</code> - 匹配字符串结束</li>
-                            <li><code>\d</code> - 匹配数字</li>
-                            <li><code>\w</code> - 匹配字母、数字、下划线</li>
-                            <li><code>\s</code> - 匹配空白字符</li>
+                            <li><code>.</code> - Matches any character (except newline)</li>
+                            <li><code>^</code> - Matches start of string</li>
+                            <li><code>$</code> - Matches end of string</li>
+                            <li><code>\d</code> - Matches digits</li>
+                            <li><code>\w</code> - Matches letters, digits, underscore</li>
+                            <li><code>\s</code> - Matches whitespace characters</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="help-card">
-                <h4><span class="help-icon">💡</span> 使用技巧</h4>
+                <h4><span class="help-icon">💡</span> Usage Tips</h4>
                 <ul>
-                    <li><strong>测试步骤：</strong>先输入正则表达式，再输入测试文本，点击"运行测试"查看结果</li>
-                    <li><strong>替换模式：</strong>在替换内容框中输入替换文本，可以批量替换匹配的内容</li>
-                    <li><strong>全局模式：</strong>勾选"全局模式"可以匹配所有符合条件的内容，否则只匹配第一个</li>
-                    <li><strong>忽略大小写：</strong>勾选"忽略大小写"可以不区分大小写进行匹配</li>
-                    <li><strong>多行模式：</strong>勾选"多行模式"可以让^和$匹配每行的开始和结束</li>
-                    <li><strong>复制链接：</strong>点击"复制链接"可以保存当前的正则表达式和测试内容</li>
+                    <li><strong>Testing Steps:</strong> First enter the regular expression, then input test text, click "Run Test" to view results</li>
+                    <li><strong>Replace Mode:</strong> Enter replacement text in the replacement content box to batch replace matched content</li>
+                    <li><strong>Global Mode:</strong> Check "Global Mode" to match all occurrences, otherwise only matches the first one</li>
+                    <li><strong>Ignore Case:</strong> Check "Ignore Case" to perform case-insensitive matching</li>
+                    <li><strong>Multiline Mode:</strong> Check "Multiline Mode" to make ^ and $ match the start and end of each line</li>
+                    <li><strong>Copy Link:</strong> Click "Copy Link" to save the current regular expression and test content</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="footer">
-       
         <div class="copyright">
-            <p>&copy; 2025 传道AI. 保留所有权利. | <a href="privacy.html">隐私政策</a> | <a href="contact.html">联系我们</a></p>
+            <p>&copy; 2025 ChuanDao AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
         </div>
     </div>
 

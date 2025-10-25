@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Free Online Regular Expression Testing Tool - Regex Generator | ChuanDao AI</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWMGEQS9C0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HWMGEQS9C0');
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            padding: 0;
+            margin-bottom: 0;
+            min-height: 90px;
+            position: relative;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .navbar-brand {
+            color: white !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            padding: 25px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            color: white !important;
+            text-decoration: none;
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+        
+        .navbar-nav {
+            display: flex !important;
+            align-items: center;
+            margin: 0 !important;
+            padding: 0 30px !important;
+            flex-direction: row;
+            width: auto !important;
+            max-width: 800px !important;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            margin-right: 0 !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-nav .nav-item {
+            margin: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 600;
+            padding: 15px 25px !important;
+            text-decoration: none;
+            border-radius: 15px;
+            margin: 0 8px !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: rgba(255,255,255,0.25);
+            color: white !important;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: rgba(255,255,255,0.3);
+            color: white !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transform: translateY(-1px);
+        }
+        
+        .brand-icon, .nav-icon {
+            margin-right: 10px;
+            font-size: 1.3em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            padding: 15px 20px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .navbar-toggler:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.05);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .navbar-collapse {
+            border-radius: 20px;
+            margin: 15px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+        }
+        
+        /* 移动端样式 */
+        @media (max-width: 991px) {
+            .navbar {
+                min-height: 70px;
+                padding: 0;
+                position: relative !important;
+                z-index: 999999 !important;
+                overflow: visible !important;
+            }
+            
+            /* 强制导航栏包装器样式 */
+            .navbar-wrapper {
+                position: relative !important;
+                z-index: 999999 !important;
+                overflow: visible !important;
+            }
+            
+            .navbar .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 20px !important;
+                margin: 0 !important;
+                position: relative !important;
+                overflow: visible !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem;
+                padding: 18px 0;
+            }
+            
+            .navbar-toggler {
+                display: block !important;
+                background: rgba(255,255,255,0.2) !important;
+                border: 1px solid rgba(255,255,255,0.3) !important;
+                border-radius: 8px !important;
+                padding: 12px 16px !important;
+            }
+            
+            /* 移动端菜单项容器 */
+            .navbar-nav {
+                flex-direction: column !important;
+                width: 100% !important;
+                background: rgba(0,0,0,0.1) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: none !important;
+                display: flex !important;
+                position: relative !important;
+                z-index: 999999 !important;
+            }
+            
+            /* 移动端菜单项 */
+            .navbar-nav .nav-link {
+                justify-content: center;
+                margin: 0;
+                padding: 18px 20px;
+                width: 100%;
+                border-radius: 0;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-align: center;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(15px);
+                border-bottom: 1px solid rgba(255,255,255,0.15);
+                display: block !important;
+                visibility: visible !important;
+                position: relative !important;
+                z-index: 999999 !important;
+                color: white !important;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .navbar-nav .nav-link:hover {
+                transform: none;
+                background: rgba(255,255,255,0.2) !important;
+                color: white !important;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+            
+            .navbar-nav .nav-link.active {
+                background: rgba(255,255,255,0.25) !important;
+                color: white !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            /* 移动端菜单容器 */
+            .navbar-collapse {
+                background: rgba(102, 126, 234, 0.95) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                width: 100% !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 999999 !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+                backdrop-filter: blur(10px) !important;
+                border-top: 1px solid rgba(255,255,255,0.3) !important;
+                display: none !important;
+            }
+            
+            /* 强制菜单在下方显示，覆盖Bootstrap默认样式 */
+            .navbar-collapse {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                background: rgba(102, 126, 234, 0.95) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+                backdrop-filter: blur(10px) !important;
+                border-top: 1px solid rgba(255,255,255,0.3) !important;
+                z-index: 999999 !important;
+            }
+            
+            /* 确保菜单能正确显示 */
+            .navbar-collapse.collapse {
+                display: none !important;
+            }
+
+            .navbar-collapse.collapse.show {
+                display: block !important;
+            }
+            
+            /* 强制菜单显示样式 */
+            .navbar-collapse.show .navbar-nav {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            /* 强制菜单项显示 */
+            .navbar-collapse.show .navbar-nav .nav-link {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            /* 测试样式 - 强制显示菜单 */
+            .navbar-collapse[style*="block"] {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+        
+        /* 小屏幕优化 */
+        @media (max-width: 576px) {
+            .navbar .container {
+                padding: 0 15px !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+                margin: 4px 0;
+            }
+            
+            .navbar-toggler {
+                padding: 10px 14px !important;
+            }
+        }
+        
+        /* 确保导航栏和主内容区域宽度完全一致 */
+        .navbar .container,
+        .main-content.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+        
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .navbar {
+            width: 100%;
+        }
+        
+        .navbar-nav.ml-auto {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+        }
+        
+        .navbar-nav .nav-item {
+            list-style: none;
+        }
+        
+        .nav-link {
+            line-height: 1.4;
+        }
+        
+        .nav-icon {
+            vertical-align: middle;
+        }
+        
+        /* 版权信息样式 */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #34495e;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin: 0;
+        }
+        
+        .copyright p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        .copyright a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .copyright a:hover {
+            color: #5dade2;
+            text-decoration: underline;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3498db;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .contact-info {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <span class="brand-icon">🔧</span>
+                    Regex Tester
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">☰</span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <span class="nav-icon">🏠</span>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">
+                                <span class="nav-icon">ℹ️</span>
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <span class="nav-icon">📞</span>
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="privacy.html">
+                                <span class="nav-icon">🔒</span>
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="nav-item language-switch-nav">
+                            <a class="nav-link" href="../about.html">
+                                <span class="nav-icon">🌐</span>
+                                简体中文
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">About ChuanDao AI</h1>
+                    <p class="page-subtitle">Empowering enterprise digital transformation with code as ink and AI as blade</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- 公司简介 -->
+                <div class="content-section">
+                    <h2 class="section-title">Company Overview</h2>
+                    <p>Since its establishment in 2019, ChuanDao AI has consistently anchored its core positioning of "using technology to solve business pain points and AI to activate growth potential." From a startup team focused on software development, it has gradually grown into a digital solution service provider covering 18 core cities nationwide and serving over 300 enterprise clients.</p>
+                    <p>We deeply understand that in the era of deep integration of AI and industry, "good software" is not just a collection of code, but a "digital engine" that fits business logic and carries strategic goals. Therefore, for five years, we have always been driven by the dual wheels of "technical depth + demand insight," continuously breaking through in the field of software development and helping enterprises cross the "last mile" of digital transformation.</p>
+                </div>
+
+                <!-- 技术实力 -->
+                <div class="content-section">
+                    <h2 class="section-title">Technical Strength and Team Building</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">120+</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Technical R&D Personnel Ratio</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">6+ Years Development Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">42</span>
+                            <span class="stat-label">Software Copyrights</span>
+                        </div>
+                    </div>
+                    
+                    <p>ChuanDao AI has built a core team of "practical + innovative" nature, with over 120 current members, of which technical R&D personnel account for more than 70%, and 85% have more than 6 years of software development experience. Core team members are all from major internet companies and leading technology enterprises, having led the development of projects with tens of millions of users, such as financial risk control systems, intelligent manufacturing management platforms, and new retail data middle platforms.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>Core Technical Products</h4>
+                        <ul class="feature-list">
+                            <li>ChuanDao Low-Code Development Platform</li>
+                            <li>AI Data Cleaning Tools</li>
+                            <li>Intelligent Business Process Engine</li>
+                        </ul>
+                        <p><strong>Technical Certification:</strong> ISO9001 Quality Management System, CMMI3 Software Capability Maturity Model dual certification</p>
+                    </div>
+                </div>
+
+                <!-- 核心业务 -->
+                <div class="content-section">
+                    <h2 class="section-title">Core Business and Service System</h2>
+                    
+                    <h4>Customized Software Development</h4>
+                    <p>For enterprise personalized needs, providing full-process services from requirement research, architecture design, code development to testing and launch, covering:</p>
+                    <ul class="feature-list">
+                        <li>Enterprise Management Systems (ERP/CRM/OA)</li>
+                        <li>Industry-Specific Software (Medical Data Management Platform, Education Smart Classroom System, Manufacturing MES System)</li>
+                        <li>Mobile Applications (APP/Mini Programs/H5)</li>
+                    </ul>
+                    
+                    <h4>AI-Enabled Solutions</h4>
+                    <p>Deeply integrating AI technology with industry scenarios, developing software systems with intelligent decision-making and automated processing capabilities:</p>
+                    <ul class="feature-list">
+                        <li>AI Risk Control Audit System - Audit efficiency reduced from 1 hour/case to 3 minutes/case</li>
+                        <li>AI Intelligent Recommendation System - Customer unit price increased by 25%, repurchase rate increased by 30%</li>
+                    </ul>
+                    
+                    <h4>Full-Cycle Technical Operation and Maintenance Services</h4>
+                    <p>Breaking the traditional model of "development is the end," providing customers with 1-3 years of dedicated operation and maintenance services, including system bug fixes, feature iterations, performance optimization, data security protection, etc., equipped with a 7×24-hour technical support team with an average response time of no more than 30 minutes.</p>
+                </div>
+
+                <!-- 社会责任 -->
+                <div class="content-section">
+                    <h2 class="section-title">Social Responsibility and Brand Philosophy</h2>
+                    <p>ChuanDao AI always practices the value of "technology for good," closely combining enterprise development with social value:</p>
+                    <ul class="feature-list">
+                        <li><strong>AI Enterprise Assistance Public Welfare Program:</strong> Providing free basic management software development and digital consulting services to 15 small and micro enterprises</li>
+                        <li><strong>ChuanDao AI Technical Training Camp:</strong> Jointly with universities to cultivate over 500 software development talents with practical capabilities</li>
+                    </ul>
+                </div>
+
+                <!-- 未来展望 -->
+                <div class="content-section">
+                    <h2 class="section-title">Looking to the Future</h2>
+                    <p>ChuanDao AI will continue to use "software development" as the foundation and "AI technology innovation" as the breakthrough point. It plans to launch an "AI Lightweight Management Suite" for small and medium enterprises in 2025 to reduce digital transformation costs; meanwhile, it will expand into new tracks such as industrial software and cross-border e-commerce systems, creating more industry benchmark projects.</p>
+                    
+                    <div class="highlight-box">
+                        <p><strong>Our Original Intention:</strong> The word "ChuanDao" is not only a brand name but also our original intention - to not only pass on cutting-edge technology and solutions but also to pass on the concept of "serving business with technology," working hand in hand with every customer to grow together in the digital wave, using code and AI to write a new chapter in enterprise development.</p>
+                    </div>
+                </div>
+
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h3 style="color: white; margin-bottom: 1rem;">Contact Us</h3>
+                    <p>Welcome to contact us at any time to learn more about ChuanDao AI.</p>
+                    <p><strong>Official Email:</strong> hcf@foxmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="copyright">
+                        <p>&copy; 2025 ChuanDao AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery-1.9.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // 移动端菜单修复
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            console.log('Menu elements found:', {
+                toggler: !!navbarToggler,
+                collapse: !!navbarCollapse
+            });
+
+            if (navbarToggler && navbarCollapse) {
+                // 确保菜单初始状态为隐藏
+                navbarCollapse.style.display = 'none';
+                navbarCollapse.classList.remove('show');
+                
+                // 点击三杆按钮切换菜单
+                navbarToggler.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Toggler clicked, current display:', navbarCollapse.style.display);
+                    
+                    if (navbarCollapse.style.display === 'block') {
+                        navbarCollapse.style.display = 'none';
+                        navbarCollapse.classList.remove('show');
+                        console.log('Menu hidden');
+                    } else {
+                        navbarCollapse.style.display = 'block';
+                        navbarCollapse.classList.add('show');
+                        console.log('Menu shown');
+                    }
+                });
+                
+                // 点击菜单外部关闭菜单
+                document.addEventListener('click', function(e) {
+                    if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                        navbarCollapse.style.display = 'none';
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            } else {
+                console.error('Menu elements not found!');
+            }
+        });
+    </script>
+</body>
+</html>

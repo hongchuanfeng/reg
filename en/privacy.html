@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Free Online Regular Expression Testing Tool - Regex Generator | ChuanDao AI</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWMGEQS9C0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HWMGEQS9C0');
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* 导航栏样式 */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            padding: 0;
+            margin-bottom: 0;
+            min-height: 90px;
+            position: relative;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .navbar-brand {
+            color: white !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            padding: 25px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            color: white !important;
+            text-decoration: none;
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+        
+        .navbar-nav {
+            display: flex !important;
+            align-items: center;
+            margin: 0 !important;
+            padding: 0 30px !important;
+            flex-direction: row;
+            width: auto !important;
+            max-width: 800px !important;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            margin-right: 0 !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-nav .nav-item {
+            margin: 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 600;
+            padding: 15px 25px !important;
+            text-decoration: none;
+            border-radius: 15px;
+            margin: 0 8px !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background: rgba(255,255,255,0.25);
+            color: white !important;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .navbar-nav .nav-link.active {
+            background: rgba(255,255,255,0.3);
+            color: white !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transform: translateY(-1px);
+        }
+        
+        .brand-icon, .nav-icon {
+            margin-right: 10px;
+            font-size: 1.3em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            padding: 15px 20px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .navbar-toggler:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.05);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .navbar-collapse {
+            border-radius: 20px;
+            margin: 15px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+        }
+        
+        /* 移动端样式 */
+        @media (max-width: 991px) {
+            .navbar {
+                min-height: 70px;
+                padding: 0;
+                position: relative !important;
+                z-index: 999999 !important;
+                overflow: visible !important;
+            }
+            
+            /* 强制导航栏包装器样式 */
+            .navbar-wrapper {
+                position: relative !important;
+                z-index: 999999 !important;
+                overflow: visible !important;
+            }
+            
+            .navbar .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 20px !important;
+                margin: 0 !important;
+                position: relative !important;
+                overflow: visible !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem;
+                padding: 18px 0;
+            }
+            
+            .navbar-toggler {
+                display: block !important;
+                background: rgba(255,255,255,0.2) !important;
+                border: 1px solid rgba(255,255,255,0.3) !important;
+                border-radius: 8px !important;
+                padding: 12px 16px !important;
+            }
+            
+            /* 移动端菜单项容器 */
+            .navbar-nav {
+                flex-direction: column !important;
+                width: 100% !important;
+                background: rgba(0,0,0,0.1) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: none !important;
+                display: flex !important;
+                position: relative !important;
+                z-index: 999999 !important;
+            }
+            
+            /* 移动端菜单项 */
+            .navbar-nav .nav-link {
+                justify-content: center;
+                margin: 0;
+                padding: 18px 20px;
+                width: 100%;
+                border-radius: 0;
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-align: center;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(15px);
+                border-bottom: 1px solid rgba(255,255,255,0.15);
+                display: block !important;
+                visibility: visible !important;
+                position: relative !important;
+                z-index: 999999 !important;
+                color: white !important;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .navbar-nav .nav-link:hover {
+                transform: none;
+                background: rgba(255,255,255,0.2) !important;
+                color: white !important;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+            
+            .navbar-nav .nav-link.active {
+                background: rgba(255,255,255,0.25) !important;
+                color: white !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            }
+            
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            /* 移动端菜单容器 */
+            .navbar-collapse {
+                background: rgba(102, 126, 234, 0.95) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                width: 100% !important;
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 999999 !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+                backdrop-filter: blur(10px) !important;
+                border-top: 1px solid rgba(255,255,255,0.3) !important;
+                display: none !important;
+            }
+            
+            /* 强制菜单在下方显示，覆盖Bootstrap默认样式 */
+            .navbar-collapse {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                background: rgba(102, 126, 234, 0.95) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+                backdrop-filter: blur(10px) !important;
+                border-top: 1px solid rgba(255,255,255,0.3) !important;
+                z-index: 999999 !important;
+            }
+            
+            /* 确保菜单能正确显示 */
+            .navbar-collapse.collapse {
+                display: none !important;
+            }
+
+            .navbar-collapse.collapse.show {
+                display: block !important;
+            }
+            
+            /* 强制菜单显示样式 */
+            .navbar-collapse.show .navbar-nav {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            /* 强制菜单项显示 */
+            .navbar-collapse.show .navbar-nav .nav-link {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            /* 测试样式 - 强制显示菜单 */
+            .navbar-collapse[style*="block"] {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+        
+        /* 小屏幕优化 */
+        @media (max-width: 576px) {
+            .navbar .container {
+                padding: 0 15px !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+                padding: 15px 0;
+                width: 100%;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+                margin: 4px 0;
+            }
+            
+            .navbar-toggler {
+                padding: 10px 14px !important;
+            }
+        }
+        
+        /* 确保导航栏和主内容区域宽度完全一致 */
+        .navbar .container,
+        .main-content.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+        
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .navbar {
+            width: 100%;
+        }
+        
+        .navbar-nav.ml-auto {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+        }
+        
+        .navbar-nav .nav-item {
+            list-style: none;
+        }
+        
+        .nav-link {
+            line-height: 1.4;
+        }
+        
+        .nav-icon {
+            vertical-align: middle;
+        }
+        
+        /* 版权信息样式 */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #34495e;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin: 0;
+        }
+        
+        .copyright p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        .copyright a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .copyright a:hover {
+            color: #5dade2;
+            text-decoration: underline;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .effective-date {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .privacy-content {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .section-content {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .section-content ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .info-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .info-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+        
+        .contact-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .toc h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            display: block;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .privacy-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <span class="brand-icon">🔧</span>
+                    Regex Tester
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">☰</span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                <span class="nav-icon">🏠</span>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                <span class="nav-icon">ℹ️</span>
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                <span class="nav-icon">📞</span>
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="privacy.html">
+                                <span class="nav-icon">🔒</span>
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="nav-item language-switch-nav">
+                            <a class="nav-link" href="../privacy.html">
+                                <span class="nav-icon">🌐</span>
+                                简体中文
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title">Privacy Policy</h1>
+                    <p class="page-subtitle">Privacy Policy</p>
+                    <div class="effective-date">
+                        Effective Date: January 1, 2025
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="privacy-content">
+                    <!-- 目录 -->
+                    <div class="toc">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#intro">Policy Overview</a></li>
+                            <li><a href="#collection">Information Collection</a></li>
+                            <li><a href="#usage">Information Usage</a></li>
+                            <li><a href="#storage">Information Storage and Protection</a></li>
+                            <li><a href="#sharing">Information Sharing and Disclosure</a></li>
+                            <li><a href="#rights">User Rights</a></li>
+                            <li><a href="#third-party">Third-Party Services</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 政策概述 -->
+                    <div class="section" id="intro">
+                        <h2 class="section-title">Policy Overview</h2>
+                        <div class="section-content">
+                            <p>ChuanDao AI (hereinafter referred to as "we") respects and protects user privacy. This privacy policy aims to explain how we collect, use, store, and protect your personal information, as well as the rights you have regarding your personal information. By using this website and related services, you indicate that you have read, understood, and agreed to all contents of this policy.</p>
+                        </div>
+                    </div>
+
+                    <!-- 信息收集 -->
+                    <div class="section" id="collection">
+                        <h2 class="section-title">1. Types of Information We Collect</h2>
+                        <div class="section-content">
+                            <p>We only collect information necessary to provide services, mainly including the following two categories:</p>
+                            
+                            <h4>Information You Actively Provide:</h4>
+                            <ul>
+                                <li>Information such as name, email address, contact phone number filled in when you register an account, submit messages, or contact us</li>
+                                <li>If you use specific website features (such as comments, submissions), it may involve content you publish and related information</li>
+                            </ul>
+                            
+                            <h4>Information We Automatically Collect:</h4>
+                            <ul>
+                                <li>Device information automatically recorded by the server when you visit the website (such as device model, operating system)</li>
+                                <li>Browsing data (such as visited pages, dwell time, IP address)</li>
+                                <li>Cookie and similar technology data (used to optimize page display and user experience. You can disable cookies in browser settings, but this may affect some functionality)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 信息使用 -->
+                    <div class="section" id="usage">
+                        <h2 class="section-title">2. Purpose of Information Usage</h2>
+                        <div class="section-content">
+                            <p>The personal information we collect is only used for the following legitimate purposes and will not exceed the necessary scope:</p>
+                            
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Service Provision</h4>
+                                    <p>Provide and maintain website services, ensure normal page loading and stable functionality</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Experience Optimization</h4>
+                                    <p>Optimize user experience, such as recommending relevant content based on browsing habits and improving website design</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Communication and Feedback</h4>
+                                    <p>Communication and feedback, such as replying to your inquiries and sending service-related notifications (non-marketing, you can unsubscribe at any time)</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Security Protection</h4>
+                                    <p>Security protection, identifying and preventing malicious access and fraudulent behavior, protecting the legitimate rights and interests of the website and users</p>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-box">
+                                <h4>Compliance Requirements</h4>
+                                <p>Comply with legal and regulatory requirements, such as cooperating with regulatory compliance inspections and handling legal disputes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 信息存储与保护 -->
+                    <div class="section" id="storage">
+                        <h2 class="section-title">3. Information Storage and Protection</h2>
+                        <div class="section-content">
+                            <h4>Storage Method and Duration:</h4>
+                            <p>Your personal information will be stored in our authorized secure servers. The storage period is "reasonable time required to achieve collection purposes" or the minimum retention period required by laws and regulations. After the period expires, we will clear the information through anonymization or permanent deletion.</p>
+                            
+                            <h4>Security Protection Measures:</h4>
+                            <ul>
+                                <li>Data Encryption: Using advanced encryption technology to protect your personal information</li>
+                                <li>Access Control: Strictly limiting data access permissions, only authorized personnel can access</li>
+                                <li>Regular Security Audits: Regular security checks and vulnerability fixes</li>
+                                <li>Dual Protection of Technology and Management: Combining technical means and management systems to ensure data security</li>
+                            </ul>
+                            
+                            <div class="warning-box">
+                                <h4>Important Reminder</h4>
+                                <p>Please note that there are certain security risks in internet transmission. We cannot guarantee 100% absolute security. You need to properly protect your account information (such as passwords).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 信息共享与披露 -->
+                    <div class="section" id="sharing">
+                        <h2 class="section-title">4. Information Sharing and Disclosure</h2>
+                        <div class="section-content">
+                            <p>We promise not to sell or rent your personal information to any third party, and only share or disclose it in the following limited circumstances:</p>
+                            
+                            <ul>
+                                <li><strong>After obtaining your explicit consent:</strong> Sharing with authorized partners (such as third-party customer service tools, partners must comply with equivalent privacy protection standards)</li>
+                                <li><strong>Legal and regulatory requirements:</strong> When required by laws, regulations, judicial authorities, or administrative regulatory departments</li>
+                                <li><strong>Protecting legitimate rights and interests:</strong> To protect our or users' legitimate rights and interests and public interests (such as dealing with fraud and illegal activities) within reasonable and necessary scope</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 用户权利 -->
+                    <div class="section" id="rights">
+                        <h2 class="section-title">5. Your Rights</h2>
+                        <div class="section-content">
+                            <p>As an information subject, you legally enjoy the following rights, which can be exercised by contacting us through the contact method in Article 7 of this policy:</p>
+                            
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <h4>Access and Correction Rights</h4>
+                                    <p>Query your personal information storage situation and apply for correction of erroneous or incomplete information</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Right to Deletion</h4>
+                                    <p>If you believe that information collection exceeds the necessary scope or you no longer use website services, you can apply for deletion of related personal information</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Right to Withdraw Consent</h4>
+                                    <p>You can withdraw consent for "non-essential information collection" at any time (such as cookie usage), but this may affect some functionality experience</p>
+                                </div>
+                                <div class="info-card">
+                                    <h4>Right to Complain</h4>
+                                    <p>If you believe our information processing behavior violates this policy or laws and regulations, you can complain to us, and we will reply with processing results within 15 business days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第三方服务 -->
+                    <div class="section" id="third-party">
+                        <h2 class="section-title">6. Third-Party Service Description</h2>
+                        <div class="section-content">
+                            <p>The website may contain third-party links (such as social media icons, advertising alliance links) or embed third-party tools (such as statistical analysis tools). These third parties have independent privacy policies, and we are not responsible for their information collection behavior. We recommend that you carefully read their privacy policies before accessing third-party services.</p>
+                        </div>
+                    </div>
+
+                    <!-- 政策修改与联系我们 -->
+                    <div class="section" id="contact">
+                        <h2 class="section-title">7. Policy Modification and Contact Us</h2>
+                        <div class="section-content">
+                            <h4>Policy Modification:</h4>
+                            <p>We may modify this policy based on changes in laws and regulations or business adjustments. The modified content will be announced in prominent positions on the website (such as the bottom of the homepage). Continued use of the website after announcement is considered your acceptance of the modifications.</p>
+                            
+                            <h4>Contact Information:</h4>
+                            <p>If you have questions about this policy, need to exercise personal information rights, or have complaints and feedback, you can contact us through the following methods:</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 联系信息 -->
+                <div class="contact-section">
+                    <h3>Contact Us</h3>
+                    <p><strong>Official Email:</strong><a href="mailto:hcf@foxmail.com">hcf@foxmail.com</a></p>
+                    <p><strong>Response Time:</strong> We will reply within 15 business days after receiving your email</p>
+                    <p>Thank you for your trust and support of ChuanDao AI!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 版权信息 -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="copyright">
+                        <p>&copy; 2025 ChuanDao AI. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery-1.9.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // 移动端菜单修复
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            console.log('Menu elements found:', {
+                toggler: !!navbarToggler,
+                collapse: !!navbarCollapse
+            });
+
+            if (navbarToggler && navbarCollapse) {
+                // 确保菜单初始状态为隐藏
+                navbarCollapse.style.display = 'none';
+                navbarCollapse.classList.remove('show');
+                
+                // 点击三杆按钮切换菜单
+                navbarToggler.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Toggler clicked, current display:', navbarCollapse.style.display);
+                    
+                    if (navbarCollapse.style.display === 'block') {
+                        navbarCollapse.style.display = 'none';
+                        navbarCollapse.classList.remove('show');
+                        console.log('Menu hidden');
+                    } else {
+                        navbarCollapse.style.display = 'block';
+                        navbarCollapse.classList.add('show');
+                        console.log('Menu shown');
+                    }
+                });
+                
+                // 点击菜单外部关闭菜单
+                document.addEventListener('click', function(e) {
+                    if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                        navbarCollapse.style.display = 'none';
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            } else {
+                console.error('Menu elements not found!');
+            }
+        });
+
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
